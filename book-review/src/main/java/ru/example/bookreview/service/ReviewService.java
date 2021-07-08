@@ -10,8 +10,6 @@ import ru.example.bookreview.entity.Review;
 import ru.example.bookreview.repository.ReviewRepository;
 
 import javax.persistence.EntityNotFoundException;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -48,9 +46,9 @@ public class ReviewService {
         return reviewRepository.findAllByBookId(bookId).stream().map(review -> {
             ReviewDto reviewDto = modelMapper.map(review, ReviewDto.class);
             try {
-                reviewDto.setUserDto(userService.getUser(review.getId()));
+                reviewDto.setUser(userService.getUser(review.getId()));
             } catch (RestClientException ex) {
-                reviewDto.setUserDto(UserDto.builder().id(review.getUserId()).build());
+                reviewDto.setUser(UserDto.builder().id(review.getUserId()).build());
             }
 
             return reviewDto;

@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ReviewDto {
     private Long id;
-    private UserDto userDto;
+    private UserDto user;
     private Long bookId;
     private Integer mark;
     private String text;
