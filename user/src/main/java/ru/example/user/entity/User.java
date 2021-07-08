@@ -1,4 +1,4 @@
-package ru.example.bookstore.entity;
+package ru.example.user.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,19 +9,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.math.BigDecimal;
+
+/**
+ * @author Burdyug Pavel
+ */
 
 @Builder
 @Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Book {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String author;
-    private String title;
-    private BigDecimal price;
-    private String groupCode;
+    Long id;
+    String email;
+    String fullName;
 }

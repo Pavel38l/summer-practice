@@ -5,14 +5,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestClientException;
 import ru.example.bookstore.entity.Book;
 import ru.example.bookstore.service.BookService;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @RestController
 @Slf4j
 public class BookController {
+
     private final BookService bookService;
 
     @Autowired
@@ -26,8 +29,8 @@ public class BookController {
     }
 
     @GetMapping("/book/{id}")
-    public String getBookById(@PathVariable Long id) {
+    public Book getBookById(@PathVariable Long id) throws EntityNotFoundException {
         log.info("User requested book with id: {} ", id);
-        return "Book1";
+        return bookService.getBook(id);
     }
 }

@@ -38,8 +38,20 @@ http://localhost:8080/v3/api-docs
 
 http://localhost:8080/swagger-ui/
 
+http://localhost:8081/swagger-ui/
+
+http://localhost:8082/swagger-ui/
+
+http://localhost:8083/swagger-ui/
+
 ### Ссылка на консоль базы данных H2
 http://localhost:8080/h2-console
+
+http://localhost:8081/h2-console
+
+http://localhost:8082/h2-console
+
+http://localhost:8083/h2-console
 
 ### Получить информацию о скидке
 
@@ -63,5 +75,24 @@ http://localhost:8081/discount
 3. Добавить в базу данных пользователей, которые могут оставлять отзывы о книгах.
 4. Добавить API, который по id книги выдает все отзывы на неё из базы данных.
 
+## API дополнительного задания
 
- 
+### Список групп и скидок
+
+http://localhost:8081/discount/IT
+
+http://localhost:8081/discount/Math
+
+### Информация о книге по id
+
+http://localhost:8080/book/1
+
+### Пользователи
+
+http://localhost:8082/user
+
+http://localhost:8082/user/1
+
+### Отзывы о книге по id
+
+http://localhost:8083/review/book/1
